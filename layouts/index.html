@@ -1,7 +1,9 @@
 {{ partial "header" .}}
 
 <h1>{{ .Title | markdownify }}</h1>
-{{ .Content }}
+<div id="content-main">
+  {{ .Content }}
+</div>
 
 <h2>{{ .Site.Params.main.latestPublishHeader | default "My Latest Job" }}</h2>
   {{ $pages := where site.RegularPages "Type" "in" .Site.Params.mainSections }}
